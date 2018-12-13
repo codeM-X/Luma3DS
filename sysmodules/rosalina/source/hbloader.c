@@ -173,9 +173,9 @@ static void HBLDR_HandleCommands(void)
 
             if (hbldrTarget[0] == 0)
             {
-                u16_strncpy(hbldrTarget, u"/boot.3dsx", PATH_MAX);
+                u16_strncpy(hbldrTarget, u"/luma/boot.3dsx", PATH_MAX);
                 ldrArgvBuf[0] = 1;
-                strncpy((char*)&ldrArgvBuf[1], "sdmc:/boot.3dsx", sizeof(ldrArgvBuf)-4);
+                strncpy((char*)&ldrArgvBuf[1], "sdmc:/luma/boot.3dsx", sizeof(ldrArgvBuf)-4);
             }
 
             res = IFile_Open(&file, ARCHIVE_SDMC, fsMakePath(PATH_EMPTY, ""), fsMakePath(PATH_UTF16, hbldrTarget), FS_OPEN_READ);
